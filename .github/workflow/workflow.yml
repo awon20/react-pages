@@ -11,17 +11,17 @@ jobs:
 
     strategy:
       matrix:
-        node-versions: [15.x]
+        node-version: [15.x]
       
     steps:
       - name: Checkout
         uses: actions/checkout@v1
 
-      - name: Install and build
+      - name: Install and Build
         run:  npm install && npm run build
 
       - name: Deploy
         uses: JamesIves/github-pages-deploy-action@4.1.4
         with:
-          branch: gh-pages #  the branch the action should deploy to.
-          folder: build    # the folder the action should deploy.
+          branch: gh-pages # The branch the action should deploy to.
+          folder: build # The folder the action should deploy.
